@@ -1,5 +1,9 @@
 #Depot - PHP Command Bus
 
+##Install
+
+`composer install vherus/depot`
+
 ##Usage
 
 Out of the box, there are two ways to use Depot. You can either explicitly provide a map of commands `=>` handlers,
@@ -23,7 +27,7 @@ namespace My;
 class Command implements Depot\Command { }
 ```
 
-And an a handler with the same name, suffixed with 'Handler', in either the current namespace or a sub-namespace named 'Handler' or 'Handlers'.
+And a a handler with the same name, suffixed with 'Handler', in either the current namespace or a sub-namespace named 'Handler' or 'Handlers'.
 
 ```php
 namespace My\Handler;
