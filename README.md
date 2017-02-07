@@ -47,7 +47,7 @@ $bus = new NativeCommandBus(new NativeMapResolver([
 $bus->dispatch(new My\Command);
 ```
 
-##Decoraction
+##Decoration
 
 `Depot` does not come with any "decorators" out of the box; at least, not yet. However, since Depot is rather simple, it's very easy to decorate.
 You could, for example, create your own implementation of the Depot `CommandBus` interface and pass the provided `NativeCommandBus` into it.
