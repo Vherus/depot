@@ -27,7 +27,7 @@ namespace My;
 class Command implements Depot\Command { }
 ```
 
-And a a handler with the same name, suffixed with 'Handler', in either the current namespace or a sub-namespace named 'Handler' or 'Handlers'.
+And a handler with the same name, suffixed with 'Handler', in either the current namespace or a sub-namespace named 'Handler' or 'Handlers'.
 
 ```php
 namespace My\Handler;
