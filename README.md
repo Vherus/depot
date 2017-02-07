@@ -2,7 +2,7 @@
 
 ##Install
 
-`composer install vherus/depot`
+`composer require vherus/depot`
 
 ##Usage
 
