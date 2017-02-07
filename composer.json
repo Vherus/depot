@@ -1,6 +1,6 @@
 {
-  "name": "vherus/command-bus",
-  "description": "A set of Entity assistance components",
+  "name": "vherus/depot",
+  "description": "A simple PHP command bus",
   "type": "library",
   "license": "MIT",
   "authors": [
