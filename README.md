@@ -46,3 +46,36 @@ $bus = new NativeCommandBus(new NativeMapResolver([
 ]));
 $bus->dispatch(new My\Command);
 ```
+
+##Decoraction
+
+`Depot` does not come with any "decorators" out of the box; at least, not yet. However, since Depot is rather simple, it's very easy to decorate.
+You could, for example, create your own implementation of the Depot `CommandBus` interface and pass the provided `NativeCommandBus` into it.
+
+For example:
+
+```php
+class QueuedCommand extends Depot\Command {}
+
+class QueuedCommandBus implements Depot\CommandBus
+{
+    private $innerBus;
+    private $queue;
+
+    public function __construct(Depot\CommandBus $innerBus, SomeQueueLibrary $queue)
+    {
+        $this->innerBus = $innerBus;
+        $this->queue = $queue;
+    }
+
+    public function dispatch(Command $command)
+    {
+        if ($command instanceof QueuedCommand) {
+            $this->queue->queue($command);
+            return;
+        }
+
+        $this->innerBus->dispatch($command);
+    }
+}
+```
