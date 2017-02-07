@@ -1,5 +1,7 @@
 #Depot - PHP Command Bus
 
+[![Build Status](https://travis-ci.org/Vherus/depot.svg?branch=master)](https://travis-ci.org/Vherus/depot)
+
 ##Install
 
 `composer require vherus/depot`
