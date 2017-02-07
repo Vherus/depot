@@ -96,3 +96,5 @@ $this->app->bind(Depot\CommandBus::class, Depot\Bus\NativeCommandBus::class);
 ```
 
 This will allow you to go ahead an inject `Depot\CommandBus` as a dependency into your classes as normal.
+
+Note: I have no intention of providing a "facade".
