@@ -79,3 +79,20 @@ class QueuedCommandBus implements Depot\CommandBus
     }
 }
 ```
+
+##Framework Specifics
+
+###Laravel
+
+I'm not in the habit of creating "ServiceProviders" and "Laravel Bridges" - I feel it's important that you be able to
+decide exactly how to use any given package. However, I have included an adapter for the Laravel IoC container.
+
+To set up Depot with Laravel, you could simply add something like the below to your `AppServiceProvider`:
+
+```php
+$this->app->bind(Depot\Container::class, Depot\Container\Laravel\IlluminateContainer::class);
+$this->app->bind(Depot\HandlerResolver::class, Depot\Resolution\NativeNamespaceResolver::class);
+$this->app->bind(Depot\CommandBus::class, Depot\Bus\NativeCommandBus::class);
+```
+
+This will allow you to go ahead an inject `Depot\CommandBus` as a dependency into your classes as normal.
