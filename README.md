@@ -1,13 +1,13 @@
-#Depot - PHP Command Bus
+# Depot - PHP Command Bus
 
 [![Build Status](https://travis-ci.org/Vherus/depot.svg?branch=master)](https://travis-ci.org/Vherus/depot)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Vherus/depot/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Vherus/depot/?branch=master)
 
-##Install
+## Install
 
 `composer require vherus/depot`
 
-##Usage
+## Usage
 
 Out of the box, there are two ways to use Depot. You can either explicitly provide a map of commands `=>` handlers,
 or (my favourite) you can use the `NativeNamespaceResolver` to automatically resolve your handlers.
@@ -50,7 +50,7 @@ $bus = new NativeCommandBus(new NativeMapResolver([
 $bus->dispatch(new My\Command);
 ```
 
-##Decoration
+## Decoration
 
 `Depot` does not come with any "decorators" out of the box; at least, not yet. However, since Depot is rather simple, it's very easy to decorate.
 You could, for example, create your own implementation of the Depot `CommandBus` interface and pass the provided `NativeCommandBus` into it.
@@ -83,9 +83,9 @@ class QueuedCommandBus implements Depot\CommandBus
 }
 ```
 
-##Framework Specifics
+## Framework Specifics
 
-###Laravel
+### Laravel
 
 I'm not in the habit of creating "ServiceProviders" and "Laravel Bridges" - I feel it's important that you be able to
 decide exactly how to use any given package. However, I have included an adapter for the Laravel IoC container.
